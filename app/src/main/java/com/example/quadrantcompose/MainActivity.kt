@@ -100,7 +100,17 @@ fun QuadrantScreen(modifier: Modifier = Modifier) {
                     .background(Color(0xFFB69DF8))
                     .padding(16.dp)
             )
-            }
+            ComposeArticle(
+                title = stringResource(R.string.Cadre4Titre),
+                description = stringResource(R.string.Cadre4Desc),
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxHeight()
+                    .background(Color(0xFFF6EDFF))
+                    .padding(16.dp)
+            )
+
+        }
         }
 }
 
