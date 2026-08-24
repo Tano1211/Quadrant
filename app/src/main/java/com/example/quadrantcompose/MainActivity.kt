@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             QuadrantComposeTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-
+                    QuadrantScreen()
                 }
             }
         }
@@ -61,17 +61,35 @@ fun ComposeArticle(
         )
         Text(
             text = description,
-            fontSize = TextUnit.Unspecified, // = Default
+            fontSize = TextUnit.Unspecified,
             textAlign = TextAlign.Center
         )
     }
 }
 
+@Composable
+fun QuadrantScreen(modifier: Modifier = Modifier) {
+    Column(modifier = modifier) {
+        Row(modifier = Modifier.weight(1f)) {
+            ComposeArticle(
+                title = stringResource(R.string.Cadre1Titre),
+                description = stringResource(R.string.Cadre2Desc),
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxHeight()
+                    .background(Color(0xFFEADDFF))
+                    .padding(16.dp)
+            )
+        }
+    }
+}
+
+
+
 @Preview(showBackground = true)
 @Composable
 fun  QuadrantComposePreview() {
     QuadrantComposeTheme {
-
-
+    QuadrantScreen()
     }
 }
